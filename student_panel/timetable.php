@@ -1,84 +1,88 @@
-
 <?php include("../assets/noSessionRedirect.php"); ?>
 <?php include("./verifyRoleRedirect.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    
+    <title>School Management - Timetable</title>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="./images/logo.png" alt="">
-            <h2>E<span class="danger">R</span>P</h2>
-        </div>
-        <div class="navbar">
-            <a href="index.php">
-                <span class="material-icons-sharp">home</span>
-                <h3>Home</h3>
-            </a>
-            <a href="timetable.php" class="active" onclick="timeTableAll()">
-                <span class="material-icons-sharp">today</span>
-                <h3>Time Table</h3>
-            </a> 
-            <a href="exam.php">
-                <span class="material-icons-sharp">grid_view</span>
-                <h3>Examination</h3>
-            </a>
-            <a href="workspace.php">
-                <span class="material-icons-sharp">description</span>
-                <h3>Workspace</h3>
-            </a>
-            <a href="password.php">
-                <span class="material-icons-sharp">password</span>
-                <h3>Change Password</h3>
-            </a>
-            <a href="logout.php">
-                <span class="material-icons-sharp">logout</span>
-                <h3>Logout</h3>
-            </a>
-        </div>
-        <div id="profile-btn" style="display: none;">
-            <span class="material-icons-sharp">person</span>
-        </div>
-        <div class="theme-toggler">
-            <span class="material-icons-sharp active">light_mode</span>
-            <span class="material-icons-sharp">dark_mode</span>
-        </div>
-        
-    </header>
+    <!-- Sidebar -->
+    <?php include('partials/_sidebar.php') ?>
+    <!-- End Sidebar -->
 
-    <main style="margin: 0;">
-        <div class="timetable active" id="timetable">
-            <div>
-                <span id="prevDay">&lt;</span>
-                <h2>Today's Timetable</h2>
-                <span id="nextDay">&gt;</span>
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <?php include("partials/_navbar.php"); ?>
+        <!-- End Navbar -->
+
+        <main>
+            <div class="header">
+                <h1>Time Table</h1>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Subject</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </main>
 
+            <!-- Body -->
+            <div class="bottom-data">
+                <div class="timetable-form">
+                    <div class="form-group">
+                        <label for="search-class">Class</label>
+                        <select class="form-select" id="search-class">
+                            <?php include('partials/select_classes.php'); ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-section">Section</label>
+                        <select class="form-select" id="search-section">
+                            <option value="A" selected>A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+
+                    <!-- Add a Day Dropdown -->
+<div class="form-group">
+    <label for="search-day">Day</label>
+    <select class="form-select" id="search-day">
+        <option value="mon">Monday</option>
+        <option value="tue">Tuesday</option>
+        <option value="wed">Wednesday</option>
+        <option value="thu">Thursday</option>
+        <option value="fri">Friday</option>
+        <option value="sat">Saturday</option>
+    </select>
+</div>
+
+
+                    <button class="btn btn-primary" id="findTimeTableBtn">Find</button>
+                </div>
+
+                <div class="timetable-container">
+                    <h3 id="timeTableClassSection"></h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Period Start</th>
+                                <th>Period End</th>
+                                <th>Subject</th>
+                                <th>Teacher</th>
+                            </tr>
+                        </thead>
+                        <tbody id="timeTable_table1"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/timetable.js"></script>
 </body>
 
-<script src="timeTable.js"></script>
-<script src="app.js"></script>
 </html>
