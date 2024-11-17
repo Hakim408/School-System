@@ -2,7 +2,7 @@
     <a href="dashboard.php" class="logo">
         <!-- <i class='bx bx-book-bookmark'></i> -->
         <img src="../images/1.png">
-          <div class="logo-name"><span class="text-warning">E</span><span class="darkTextColor">R</span><span class="text-warning">P</span></div>
+          <div class="logo-name"><span class="text-warning">S</span><span class="darkTextColor">M</span><span class="text-warning">S</span></div>
     </a>
     
     <ul class="side-menu-opener">

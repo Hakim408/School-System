@@ -1,6 +1,6 @@
 <?php include("../assets/noSessionRedirect.php"); ?>
 <?php include("./verifyRoleRedirect.php"); ?>
-
+<?php include('partials/_header.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -31,7 +31,7 @@
       </div>
       <div class="row mt-4">
         <div class="col-md-12">
-          <p>&copy; <?php echo date('Y'); ?> By <a href="https://www.github.com/ProjectsAndPrograms" target="_blank">ProjectsAndPrograms</a>. All rights reserved.</p>
+          <p>&copy; <?php echo date('Y'); ?> By <a href="https://www.github.com/ProjectsAndPrograms" target="_blank">Hakim & Niraj</a>. All rights reserved.</p>
         </div>
       </div>
     </div>
